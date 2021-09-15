@@ -138,7 +138,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	if [ $COMPILER = "clang" ]
 	then
 		msg "|| Cloning toolchain ||"
-		git clone --depth=1 https://github.com/kdrag0n/proton-clang.git clang
+		git clone --depth=1 https://github.com/Plankton00/Predator_clang_13.git clang
 
 	elif [ $COMPILER = "gcc" ]
 	then
@@ -178,7 +178,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 # Function to replace defconfig versioning
 setversioning() {
     # For staging branch
-    KERNELNAME="$NAMA-$JENIS-$VARIAN-$LINUXVER-$DATE"
+    KERNELNAME="$NAMA-$JENIS-$VARIAN-$DATE"
     # Export our new localversion and zipnames
     export KERNELNAME
     export ZIPNAME="$KERNELNAME.zip"
