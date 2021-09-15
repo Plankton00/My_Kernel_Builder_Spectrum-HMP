@@ -138,7 +138,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 	if [ $COMPILER = "clang" ]
 	then
 		msg "|| Cloning toolchain ||"
-		git clone --depth=1 https://github.com/Plankton00/Predator_clang_13.git clang
+		git clone --depth=1 https://github.com/kdrag0n/proton-clang.git clang
 
 	elif [ $COMPILER = "gcc" ]
 	then
