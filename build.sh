@@ -45,21 +45,21 @@ KERNEL_DIR=$PWD
 MODEL="Asus Zenfone Max Pro M1"
 
 # The codename of the device
-DEVICE="X00TD"
+DEVICE="X00TD/X00T"
 
 # The defconfig which should be used. Get it from config.gz from
 # your device or check source
-DEFCONFIG=X00TD_defconfig
+DEFCONFIG=X00T_defconfig
 
 # Show manufacturer info
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=MORBID
+NAMA=Magazine-Kernel
 
-JENIS=HMP
+JENIS=LV
 
-VARIAN=LTO
+VARIAN=Ryzen_radeon1
 # Build Type
 BUILD_TYPE="Nightly"
 
@@ -164,7 +164,7 @@ DATE2=$(TZ=Asia/Jakarta date +"%Y%m%d")
 		GCC32_DIR=$KERNEL_DIR/gcc32
 
 	msg "|| Cloning Anykernel ||"
-        git clone https://github.com/BENKz29/Anykernel.git -b master AnyKernel3
+        git clone https://github.com/Plankton00/AnyKernel3.git -b main AnyKernel3
 
 	if [ $BUILD_DTBO = 1 ]
 	then
@@ -187,9 +187,9 @@ setversioning() {
 ##--------------------------------------------------------------##
 
 exports() {
-	export KBUILD_BUILD_USER="nobody"
-    export KBUILD_BUILD_HOST="android-build"
-    export KBUILD_BUILD_VERSION="3"
+	export KBUILD_BUILD_USER="amd"
+    export KBUILD_BUILD_HOST="ryzen-radeon"
+    export KBUILD_BUILD_VERSION="1"
 	export ARCH=arm64
 	export SUBARCH=arm64
 
@@ -383,8 +383,8 @@ gen_zip() {
         cp -af anykernel-real.sh anykernel.sh
 	sed -i "s/kernel.string=.*/kernel.string=$NAMA-$VARIAN/g" anykernel.sh
 	sed -i "s/kernel.for=.*/kernel.for=$JENIS/g" anykernel.sh
-	sed -i "s/kernel.compiler=.*/kernel.compiler=$KBUILD_COMPILER_STRING/g" anykernel.sh
-	sed -i "s/kernel.made=.*/kernel.made=$KBUILD_BUILD_USER @$KBUILD_BUILD_HOST/g" anykernel.sh
+	sed -i "s/kernel.compiler=.*/kernel.compiler=$COMPILER/g" anykernel.sh
+	sed -i "s/kernel.made=.*/kernel.made=Plankton @Plankton00/g" anykernel.sh
 	sed -i "s/kernel.version=.*/kernel.version=$LINUXVER/g" anykernel.sh
 	sed -i "s/message.word=.*/message.word=don't blame me if u get poor battery backup or weak performance . i'm not responsible . Do with Your Own Risk./g" anykernel.sh
 	sed -i "s/build.date=.*/build.date=$DATE2/g" anykernel.sh
