@@ -55,13 +55,13 @@ DEFCONFIG=X00TD_defconfig
 MANUFACTURERINFO="ASUSTek Computer Inc."
 
 # Kernel Variant
-NAMA=Magazine-HMP
+NAMA=Magazine-HMP-Spectrum
 
 KERNEL_FOR=Spectrum-HMP-Overclock
 
 JENIS=[NLV]
 
-VARIAN=Ryzen-radeon-#1
+VARIAN=Ryzen-#1
 # Build Type
 BUILD_TYPE="Nightly"
 
@@ -381,7 +381,7 @@ gen_zip() {
 		mv "$KERNEL_DIR"/out/arch/arm64/boot/dtbo.img AnyKernel3/dtbo.img
 	fi
 	cd AnyKernel3 || exit
-	cp -af "$KERNEL_DIR"/init.MagazineSpectrum.rc init.spectrum.rc && sed -i "s/persist.spectrum.kernel.*/persist.spectrum.kernel MagazinePrjkt/g" init.spectrum.rc
+	cp -af "$KERNEL_DIR"/init.MagazineSpectrum.rc init.spectrum.rc && sed -i "s/persist.spectrum.kernel.*/persist.spectrum.kernel MagazineProjec/g" init.spectrum.rc
 	sed -i "s/kernel.string=.*/kernel.string=$NAMA-$VARIAN/g" anykernel.sh
 	sed -i "s/kernel.for=.*/kernel.for=$KERNEL_FOR/g" anykernel.sh
 	sed -i "s/kernel.compiler=.*/kernel.compiler=$COMPILER/g" anykernel.sh
