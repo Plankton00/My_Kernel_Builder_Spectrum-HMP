@@ -57,7 +57,7 @@ MANUFACTURERINFO="ASUSTek Computer Inc."
 # Kernel Variant
 NAMA=Magazine-HMP
 
-KERNEL_FOR=HMP-Overclock
+KERNEL_FOR=Spectrum-HMP-Overclock
 
 JENIS=[NLV]
 
